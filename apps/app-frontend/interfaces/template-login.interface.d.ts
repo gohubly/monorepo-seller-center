@@ -1,0 +1,3 @@
+interface iUseTemplateLoginLogic {
+  [key]?: string
+}

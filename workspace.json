@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "app-api": "apps/app-api",
+    "app-frontend": "apps/app-frontend",
+    "app-frontend-e2e": "apps/app-frontend-e2e",
+    "shared-types": "libs/shared-types"
+  }
+}

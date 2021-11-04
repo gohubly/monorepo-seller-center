@@ -1,0 +1,5 @@
+export enum ERROR {
+  USER_NOT_FOUND = 0,
+  USER_DISABLED = 1,
+  USER_PENDING = 2,
+}

@@ -1,9 +1,9 @@
 import { Document, model, Schema } from 'mongoose';
 import * as moment from 'moment'
 
-import { iUser, UserGenderEnum, UserStatusEnum } from '@gohubly/shared-types';
+import { iUser, UserGenderEnum, UserStatusEnum } from '@gohubly/shared';
 
-export interface iUserModel extends Document, iUser {
+export interface iUserModel extends Document, Omit<iUser, 'id'> {
   _id: string;
   created_at: Date;
   updated_at: Date;
@@ -26,23 +26,19 @@ const UserSchema = new Schema(
       type: String,
       enum: Object.values(UserGenderEnum),
     },
-    address: {
-      street: { type: String },
-      number: { type: String },
-      complement: { type: String },
-      neighborhood: { type: String },
-      zipcode: { type: String },
-      city: { type: String },
-      state: { type: String },
-      country: {
-        type: String,
-        default: 'Brazil',
-      },
+    address_street: { type: String },
+    address_number: { type: String },
+    address_complement: { type: String },
+    address_neighborhood: { type: String },
+    address_zipcode: { type: String },
+    address_city: { type: String },
+    address_state: { type: String },
+    address_country: {
+      type: String,
+      default: 'Brazil',
     },
-    document: {
-      value: { type: String },
-      type: { type: String },
-    },
+    documentValue: { type: String },
+    documentType: { type: String },
     status: {
       type: String,
       default: UserStatusEnum.PENDING,

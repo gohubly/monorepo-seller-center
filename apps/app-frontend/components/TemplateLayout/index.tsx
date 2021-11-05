@@ -2,7 +2,7 @@ import { useRouter } from "next/dist/client/router";
 import { useMemo } from "react";
 
 import { useAuthContext } from "../../context";
-import { ROUTES } from '@gohubly/shared-types'
+import { ROUTES } from '@gohubly/shared'
 
 const TemplateLayout: React.FC<iTemplateLayout> = ({ children, type }) => {
   const router = useRouter()

@@ -4,6 +4,7 @@
     "app-api": "apps/app-api",
     "app-frontend": "apps/app-frontend",
     "app-frontend-e2e": "apps/app-frontend-e2e",
+    "design-system": "libs/design-system",
     "shared-types": "libs/shared-types"
   }
 }

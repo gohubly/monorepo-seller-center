@@ -1,7 +1,7 @@
 import * as express from 'express';
 import * as cors from 'cors'
 
-import { API_PORT } from '@gohubly/shared-types'
+import { API_PORT } from '@gohubly/shared'
 
 import routes from './api/routes';
 import errorHandler from './api/middleware/errorHandler.midd';

@@ -1,4 +1,4 @@
-import { iObject } from '@gohubly/shared-types'
+import { iObject } from '@gohubly/shared'
 
 interface iCommonHandler {
   status: number

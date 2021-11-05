@@ -1,5 +1,3 @@
-import { UserGenderEnum, UserStatusEnum } from "../enums/user.enum";
-
 export interface iUserAddress {
   street: string;
   number: string;
@@ -14,16 +12,16 @@ export interface iUserAddress {
 export interface iUserAddressModel extends Document, iUserAddress {}
 
 export interface iUser {
-  name: string;
-  password: string;
-  email: string;
-  phone: string;
-  birthdate: Date;
-  gender: UserGenderEnum;
-  address: iUserAddressModel;
-  document: {
-    value: string;
-    type: string;
-  };
-  status: UserStatusEnum;
+  id?: string
+  name: string
+  email: string
+  password: string
+  gender: string
+  phone: string
+  birthdate: string
+  documentType: string
+  documentValue: string
+  status: string
+  addressState: string
+  addressCity: string
 }

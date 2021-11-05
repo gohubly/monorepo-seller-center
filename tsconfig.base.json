@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@gohubly/shared-types": ["libs/shared-types/src/index.ts"],
-      "@apps/*": ["apps/*"]
+      "@apps/*": ["apps/*"],
+      "@gohubly/shared": ["libs/shared-types/src/"],
+      "@gohubly/design-system": ["libs/design-system/src/"]
     }
   },
   "exclude": ["node_modules", "tmp"]

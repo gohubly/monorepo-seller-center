@@ -1,4 +1,4 @@
-import { iUser } from '@gohubly/shared-types'
+import { iUser } from '@gohubly/shared'
 import { UserModel } from '../user/user.model'
 
 const getUserByEmailAndPassword = async (email: string, cryptedPassword: string): Promise<iUser> => {

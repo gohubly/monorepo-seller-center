@@ -6,7 +6,7 @@ const LoginTemplate: React.FC = () => {
 
   return (
     <TemplateLayout type='PUBLIC'>
-      <h1>Login templatee!</h1>
+      Login templatee!
     </TemplateLayout>
   )
 }

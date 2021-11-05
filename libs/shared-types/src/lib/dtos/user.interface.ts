@@ -24,4 +24,5 @@ export interface iUser {
   status: string
   addressState: string
   addressCity: string
+  organizationId: string
 }

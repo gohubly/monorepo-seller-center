@@ -1,6 +1,6 @@
-import { iObject, UserStatusEnum } from "@gohubly/shared-types";
+import { iObject, UserStatusEnum } from "@gohubly/shared";
 import { NextFunction } from "express";
-import { Crypto } from "@gohubly/shared-types";
+import { Crypto } from "@gohubly/shared";
 import LoginRepository from "./login.repository";
 
 const authenticateUser = async (payload: iObject, next: NextFunction) => {

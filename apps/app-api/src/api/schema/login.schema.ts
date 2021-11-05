@@ -1,5 +1,5 @@
 import * as Joi from 'joi'
-import { SchemaValidator } from '../middleware/schemaValidator';
+import { SchemaValidator } from '../middleware/schemaValidator.midd';
 
 export const loginUserSchema: SchemaValidator = {
   body: Joi.object({

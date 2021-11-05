@@ -1,4 +1,4 @@
-import { Crypto, iUser } from "@gohubly/shared-types";
+import { Crypto, iUser } from "@gohubly/shared";
 import { NextFunction } from "express";
 import { UserModel } from "./user.model";
 

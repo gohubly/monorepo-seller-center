@@ -12,14 +12,9 @@ export const objectToUserMapper = ({
   documentType,
   documentValue,
   status,
-  address_country,
-  address_state,
-  address_city,
-  address_neighborhood,
-  address_street,
-  address_number,
-  address_complement,
-  organization_id,
+  addressState,
+  addressCity,
+  organizationId,
 }: Record<string, any>): iUser => {
   const phoneOnlyNumbers = formatOnlyNumbers(phone)
   const documenteOnlyNumbers = formatOnlyNumbers(documentValue)
@@ -35,13 +30,8 @@ export const objectToUserMapper = ({
     documentValue: documenteOnlyNumbers,
     phone: phoneOnlyNumbers,
     status,
-    address_city,
-    address_country,
-    address_neighborhood,
-    address_number,
-    address_state,
-    address_street,
-    address_complement,
-    organization_id
+    addressState,
+    addressCity,
+    organizationId,
   }
 }

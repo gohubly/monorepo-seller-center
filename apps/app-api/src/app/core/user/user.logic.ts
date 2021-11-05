@@ -1,4 +1,4 @@
-import { iObject, objectToUserMapper } from "@gohubly/shared-types"
+import { iObject, objectToUserMapper } from "@gohubly/shared"
 import { NextFunction } from "express";
 import UserRepository from "./user.repository"
 

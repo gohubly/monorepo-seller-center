@@ -1,7 +1,7 @@
 import { Component } from "react";
 import LoginTemplate from "../../templates/Login";
 
-import { Button } from '@gohubly/design-system'
+import { Input } from '@gohubly/design-system'
 
 class LoginPage extends Component {
   componentDidCatch(error) {
@@ -13,8 +13,8 @@ class LoginPage extends Component {
   render() {
     return (
       <div>
-        <Button>botao</Button>
-        <LoginTemplate />
+        <Input placeholder="Aooooba" />
+        {/* <LoginTemplate /> */}
       </div>
     );
   }

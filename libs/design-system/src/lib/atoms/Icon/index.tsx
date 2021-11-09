@@ -4,10 +4,12 @@ import { iIconTypes, iIcon } from './icon.interface'
 
 import User from './icons/user.svg'
 import Question from './icons/question.svg'
+import Check from './icons/check.svg'
 
 const ICONS_BY_ID: Record<iIconTypes, string> = {
   user: User,
   question: Question,
+  check: Check,
 }
 
 export const Icon: React.FC<iIcon> = (props) => {

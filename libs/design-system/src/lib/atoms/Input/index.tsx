@@ -1,6 +1,7 @@
 import styled from './input.style'
 
 import { iInputComponent } from './input.interface'
+import Typography from '../Typography'
 
 export const Input: React.FC<iInputComponent> = ({
   prefix,
@@ -13,9 +14,9 @@ export const Input: React.FC<iInputComponent> = ({
   onChange,
   value,
   placeholder,
+  label,
 }) => {
   const props = {
-    size,
     prefix,
     suffix,
     iconLeft,
@@ -26,7 +27,11 @@ export const Input: React.FC<iInputComponent> = ({
     error,
     disabled,
   }
+
   return (
-    <styled.Input {...props} />
+    <styled.Flex>
+      {label && <Typography size="small" textTransform="uppercase" color="grayscale900" weight='500'>{label}</Typography>}
+      <styled.Input size={size as never} {...props} />
+    </styled.Flex>
   )
 }

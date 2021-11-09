@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 import { iTypographyHeadlines, iTypographySizes } from './typography.interface'
 
 interface iTypographyComponent {
+  textTransform?: string
   as: string
   size: string
   textAlign: string
@@ -25,8 +26,9 @@ const TypographyCss = css<iTypographyComponent>`
   font-style: normal;
   font-weight: ${({ weight }) => weight};
   
-  color: ${({ color, theme }) => theme.colors[color]};
+  color: ${({ color, theme }) => color ? theme.colors[color] : ''};
   text-align: ${({ textAlign }) => textAlign};
+  text-transform: ${({ textTransform }) => textTransform};
 `
 
 const Span = styled.span<iTypographyComponent>`

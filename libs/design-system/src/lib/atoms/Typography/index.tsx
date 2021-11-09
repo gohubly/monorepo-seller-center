@@ -6,16 +6,18 @@ import styled from './typography.style'
 export const Typography: React.FC<iTypography> = ({
   children,
   as = 'span',
-  color = 'grayscale900',
+  color,
   size = 'small',
   textAlign = 'left',
   weight = '500',
+  textTransform,
 }) => {
   const props = {
     size,
     textAlign,
     color,
     weight,
+    textTransform,
     as,
   }
   switch (as) {

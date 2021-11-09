@@ -6,11 +6,14 @@ export type iTypographySizes = 'small' | 'medium' | 'large'
 export type iTypographyWeight = '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
 export type iTypographyTextAlignment = 'center' | 'left' | 'right'
 export type iTypographyColors = keyof typeof theme.colors
+export type iTypographyTextTransform = 'uppercase' | 'lowercase'
 
 export interface iTypography {
+  children: string
   as?: iTypographyAs;
   color?: iTypographyColors;
   size?: iTypographySizes;
   textAlign?: iTypographyTextAlignment;
-  weight?: iTypographyWeight
+  weight?: iTypographyWeight;
+  textTransform?: iTypographyTextTransform;
 }

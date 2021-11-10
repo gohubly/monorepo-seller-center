@@ -3,3 +3,4 @@
 
 echo '😰😰 Init repo tests'
 yarn test
+echo '✅✅ Finished repo tests'

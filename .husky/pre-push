@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '😰😰 Init repo build'
+yarn build
+echo '✅✅ Finished repo build'
+

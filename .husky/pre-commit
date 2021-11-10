@@ -3,9 +3,9 @@
 
 echo ''
 echo '😰😰 Init repo tests'
-echo ''
+echo ""
 
-yarn test
+npx yarn test
 
 echo ''
 echo '✅✅ Finished repo tests & created commit'

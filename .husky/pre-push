@@ -5,9 +5,8 @@ echo ''
 echo '😰😰 Init repo build'
 echo ''
 
-yarn build
+npx yarn build
 
 echo ''
 echo '✅✅ Finished repo build & pushed to branch'
 echo ''
-

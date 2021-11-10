@@ -7,25 +7,25 @@ const create = async (user: iUser, next: NextFunction) => {
   try {
     const cryptedPassword = Crypto.encrypt(user.password)
 
-    const userWithSameEmail = await UserModel.findOne({ email: user.email })
-    if (userWithSameEmail) throw 'user already exists'
+    // const userWithSameEmail = await UserModel.findOne({ email: user.email })
+    // if (userWithSameEmail) throw 'user already exists'
 
-    const userWithCryptedPassword: iUser = {
-      ...user,
-      password: cryptedPassword
-    }
+    // const userWithCryptedPassword: iUser = {
+    //   ...user,
+    //   password: cryptedPassword
+    // }
 
-    await UserModel.create(userWithCryptedPassword)
+    // await UserModel.create(userWithCryptedPassword)
   } catch (error) {
     next(error)
   }
 }
 
-const getUserByEmailAndPassword = async (email: string, cryptedPassword: string): Promise<iUser> => {
+const getUserByEmailAndPassword = async (email: string, cryptedPassword: string): Promise<any> => {
   console.log('Init check in database if login is correct', { email, cryptedPassword })
 
-  const user = await UserModel.findOne({ email, password: cryptedPassword })
-  return user
+  // const user = await UserModel.findOne({ email, password: cryptedPassword })
+  return 
 }
 
 const UserRepository = {

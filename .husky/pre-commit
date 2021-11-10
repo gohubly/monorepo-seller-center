@@ -1,6 +1,12 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo ''
 echo '😰😰 Init repo tests'
+echo ''
+
 yarn test
-echo '✅✅ Finished repo tests'
+
+echo ''
+echo '✅✅ Finished repo tests & created commit'
+echo ''

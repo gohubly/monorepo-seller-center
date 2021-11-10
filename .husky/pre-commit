@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo 'Init repo tests'
+echo '😰😰 Init repo tests'
 yarn test

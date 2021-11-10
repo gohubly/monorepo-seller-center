@@ -8,12 +8,6 @@
     "build": "nx build",
     "test": "nx test"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn test",
-      "pre-push": "yarn build"
-    }
-  },
   "private": true,
   "dependencies": {
     "core-js": "^3.6.5",

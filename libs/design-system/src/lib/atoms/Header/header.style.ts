@@ -10,6 +10,7 @@ const Wrapper = styled.div`
 const Children = styled.div`
   display: flex;
   align-items: center;
+  flex: 1;
   gap: 8px;
 `
 

@@ -12,17 +12,23 @@ export interface iUserAddress {
 export interface iUserAddressModel extends Document, iUserAddress {}
 
 export interface iUser {
-  id?: string
-  name: string
-  email: string
-  password: string
+  id?: number;
+  name: string;
+  email: string;
+  password: string;
+  phone: number;
+  birthdateIso: string;
   gender: string
-  phone: string
-  birthdate: string
+  address_street: string
+  address_number: string
+  address_complement: string
+  address_neighborhood: string
+  address_zipcode: string
+  address_city: string
+  address_state: string
+  address_country: string
   documentType: string
-  documentValue: string
+  documentValue: number
   status: string
-  addressState: string
-  addressCity: string
-  organizationId: string
+  created_at?: string
 }

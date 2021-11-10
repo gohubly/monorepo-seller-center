@@ -1,0 +1,19 @@
+{
+   "type": "postgres",
+   "host": "127.0.0.1",
+   "port": 5432,
+   "username": "postgres",
+   "password": "abc123",
+   "synchronize": false,
+   "database": "hubly-seller-center",
+   "entities": [
+      "./apps/app-api/src/app/database/models/*.ts"
+   ],
+   "migrations": [
+      "./apps/app-api/src/app/database/migrations/*.ts"
+   ],
+   "cli": {
+     "entitiesDir": "./apps/app-api/src/app/database/models/",
+     "migrationsDir": "./apps/app-api/src/app/database/migrations/"
+   }
+}

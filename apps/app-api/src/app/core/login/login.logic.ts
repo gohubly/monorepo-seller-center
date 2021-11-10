@@ -1,7 +1,7 @@
 import { iObject, UserStatusEnum } from "@gohubly/shared";
 import { NextFunction } from "express";
 import { Crypto } from "@gohubly/shared";
-import LoginRepository from "./login.repository";
+import UserRepository from "../user/user.repository";
 
 const authenticateUser = async (payload: iObject, next: NextFunction) => {
   console.log('logic: Init attempt to authenticate user')
@@ -9,7 +9,7 @@ const authenticateUser = async (payload: iObject, next: NextFunction) => {
   try {
     const encryptedPassword = Crypto.encrypt(password)
   
-    const user = await LoginRepository.getUserByEmailAndPassword(email, encryptedPassword)
+    const user = await UserRepository.getUserByEmailAndPassword(email, encryptedPassword)
     if (!user) throw 'user not found'
 
     const userIsDisabled = user.status === UserStatusEnum.DISABLED

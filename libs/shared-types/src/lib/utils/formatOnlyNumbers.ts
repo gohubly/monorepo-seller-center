@@ -1,1 +1,1 @@
-export const formatOnlyNumbers = (value: string) => value.replace(/\D/g, "");
+export const formatOnlyNumbers = (value: string) => parseInt(value.replace(/\D/g, ""));

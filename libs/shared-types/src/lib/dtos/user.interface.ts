@@ -19,16 +19,17 @@ export interface iUser {
   phone: number;
   birthdateIso: string;
   gender: string
-  address_street: string
-  address_number: string
-  address_complement: string
-  address_neighborhood: string
-  address_zipcode: string
-  address_city: string
-  address_state: string
-  address_country: string
+  addressStreet?: string
+  addressNumber?: string
+  addressComplement?: string
+  addressNeighborhood?: string
+  addressZipcode?: string
+  addressCity: string
+  addressState: string
+  addressCountry?: string
   documentType: string
   documentValue: number
   status: string
-  created_at?: string
+  createdAt?: string
+  organizationId?: string
 }

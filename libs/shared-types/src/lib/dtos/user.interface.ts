@@ -1,3 +1,5 @@
+import { StringifyOptions } from "querystring";
+
 export interface iUserAddress {
   street: string;
   number: string;
@@ -19,17 +21,17 @@ export interface iUser {
   phone: number;
   birthdateIso: string;
   gender: string
-  addressStreet?: string
-  addressNumber?: string
-  addressComplement?: string
-  addressNeighborhood?: string
-  addressZipcode?: string
-  addressCity: string
-  addressState: string
-  addressCountry?: string
   documentType: string
   documentValue: number
   status: string
+  organizationId: string
   createdAt?: string
-  organizationId?: string
+  // addressStreet?: string
+  // addressNumber?: string
+  // addressComplement?: string
+  // addressNeighborhood?: string
+  // addressZipcode?: string
+  // addressCity: string
+  // addressState: string
+  // addressCountry?: string
 }

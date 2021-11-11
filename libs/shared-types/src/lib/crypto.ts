@@ -1,6 +1,8 @@
+import { hashSync, compare } from 'bcrypt'
+
 const encrypt = (varToCrypt: string): string => {
-   // TODO: Encrypt password
-  return varToCrypt.toUpperCase()
+  const cryptedValue = hashSync(varToCrypt, 8)
+  return cryptedValue
 }
 
 const decrypt = (varToCrypt: string): string => {
@@ -11,4 +13,5 @@ const decrypt = (varToCrypt: string): string => {
 export const Crypto = {
   encrypt,
   decrypt,
+  compare,
 }

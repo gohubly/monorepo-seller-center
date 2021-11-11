@@ -2,8 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "module": "commonjs",
-    "types": ["node", "express"]
+    "experimentalDecorators": true,
+    "module": "ESNext",
+    "types": ["node", "express"],
   },
   "exclude": ["**/*.spec.ts"],
   "include": ["**/*.ts"]

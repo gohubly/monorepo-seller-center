@@ -20,5 +20,8 @@
       "@gohubly/design-system": ["libs/design-system/src/"]
     }
   },
+  "include": [
+    "src/**/*.d.ts"
+  ],
   "exclude": ["node_modules", "tmp"]
 }

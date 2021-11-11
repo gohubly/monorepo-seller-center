@@ -11,10 +11,12 @@
   },
   "private": true,
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
     "express": "4.17.1",
     "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "mongoose": "^6.0.12",
     "next": "12.0.0",
@@ -24,6 +26,7 @@
     "react-dom": "17.0.2",
     "react-is": "17.0.2",
     "react-topbar-progress-indicator": "^4.1.0",
+    "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "0.13.7",
     "styled-components": "5.3.3",
     "tslib": "^2.0.0",
@@ -45,8 +48,10 @@
     "@svgr/webpack": "^5.5.0",
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",
+    "@types/bcrypt": "^5.0.0",
     "@types/express": "4.17.0",
     "@types/jest": "27.0.2",
+    "@types/jsonwebtoken": "^8.5.5",
     "@types/moment": "^2.13.0",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^16.11.7",
@@ -71,6 +76,8 @@
     "jest": "27.2.3",
     "prettier": "^2.3.1",
     "ts-jest": "27.0.5",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
     "typescript": "^4.4.4"
   }
 }

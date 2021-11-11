@@ -1,36 +1,61 @@
 import { Crypto, iUser } from "@gohubly/shared";
 import { NextFunction } from "express";
+import * as moment from "moment";
+import { getConnection } from "typeorm";
 
-import UsersModel from '../../database/models/Users'
+import UsersEntity from '../../database/entities/Users'
 
-const create = async (user: iUser, next: NextFunction) => {
+const create = async (user: iUser, next: NextFunction): Promise<iUser> => {
   console.log('Init create new user in database', `user name: ${user.name}`)
   try {
+    const UserRepository = getConnection().getRepository(UsersEntity);
     const cryptedPassword = Crypto.encrypt(user.password)
 
-    const userWithSameEmail = await getUserByEmailAndPassword(user.email, cryptedPassword)
+    const userWithSameEmail = await getUserByEmailAndCryptedPassword(user.email, cryptedPassword)
     if (userWithSameEmail) throw 'user already exists'
 
-    const userWithCryptedPassword: iUser = {
+    const createdAtIso = moment().toISOString()
+
+    const userWithCryptedPassword: UsersEntity = {
       ...user,
-      password: cryptedPassword
+      password: cryptedPassword,
+      createdAt: createdAtIso,
     }
 
-    await UsersModel.create(userWithCryptedPassword)
+    const createdUser = await UserRepository.create(userWithCryptedPassword)
+    return createdUser
   } catch (error) {
     next(error)
   }
 }
 
-const getUserByEmailAndPassword = async (email: string, cryptedPassword: string): Promise<any> => {
+const getUserByEmailAndCryptedPassword = async (email: string, cryptedPassword: string): Promise<iUser> => {
   console.log('Init check in database if login is correct', { email, cryptedPassword })
+  try {
+    const UserRepository = getConnection().getRepository(UsersEntity);
 
-  const user = await UsersModel.findOne({ email, password: cryptedPassword })
-  return user
+    const user = await UserRepository.findOne({ email, password: cryptedPassword })
+    return user
+  } catch (error) {
+    console.error('getUserByEmailAndCryptedPassword', error)
+  }
+}
+
+const getUserByEmail = async (email: string): Promise<iUser> => {
+  console.log('Init get user by email in database', { email })
+  try {
+    const UserRepository = getConnection().getRepository(UsersEntity);
+
+    const user = await UserRepository.findOne({ email })
+    return user
+  } catch (error) {
+    console.error('getUserByEmail', error)
+  }
 }
 
 const UserRepository = {
-  getUserByEmailAndPassword,
+  getUserByEmailAndCryptedPassword,
+  getUserByEmail,
   create,
 }
 

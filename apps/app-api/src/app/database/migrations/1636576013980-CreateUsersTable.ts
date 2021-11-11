@@ -39,38 +39,6 @@ export class CreateUsersTable1636576013980 implements MigrationInterface {
                     type: 'varchar',
                 },
                 {
-                    name: 'address_street',
-                    type: 'varchar',
-                },
-                {
-                    name: 'address_number',
-                    type: 'varchar',
-                },
-                {
-                    name: 'address_complement',
-                    type: 'varchar',
-                },
-                {
-                    name: 'address_neighborhood',
-                    type: 'varchar',
-                },
-                {
-                    name: 'address_zipcode',
-                    type: 'varchar',
-                },
-                {
-                    name: 'address_city',
-                    type: 'varchar',
-                },
-                {
-                    name: 'address_state',
-                    type: 'varchar',
-                },
-                {
-                    name: 'address_country',
-                    type: 'varchar',
-                },
-                {
                     name: 'documentType',
                     type: 'varchar',
                 },
@@ -83,9 +51,45 @@ export class CreateUsersTable1636576013980 implements MigrationInterface {
                     type: 'varchar',
                 },
                 {
-                    name: 'created_at',
+                    name: 'organizationId',
                     type: 'varchar',
                 },
+                {
+                    name: 'createdAt',
+                    type: 'varchar',
+                },
+                // {
+                //     name: 'address_street',
+                //     type: 'varchar',
+                // },
+                // {
+                //     name: 'address_number',
+                //     type: 'varchar',
+                // },
+                // {
+                //     name: 'address_complement',
+                //     type: 'varchar',
+                // },
+                // {
+                //     name: 'address_neighborhood',
+                //     type: 'varchar',
+                // },
+                // {
+                //     name: 'address_zipcode',
+                //     type: 'varchar',
+                // },
+                // {
+                //     name: 'address_city',
+                //     type: 'varchar',
+                // },
+                // {
+                //     name: 'address_state',
+                //     type: 'varchar',
+                // },
+                // {
+                //     name: 'address_country',
+                //     type: 'varchar',
+                // },
             ],
 
         })

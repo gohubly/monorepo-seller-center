@@ -3,7 +3,7 @@ import { NextFunction } from "express";
 import * as moment from "moment";
 import { getConnection } from "typeorm";
 
-import UsersEntity from '../../database/entities/Users'
+import UsersEntity from '../../database/entities/users.entity'
 
 const create = async (user: iUser, next: NextFunction): Promise<iUser> => {
   console.log('Init create new user in database', `user name: ${user.name}`)

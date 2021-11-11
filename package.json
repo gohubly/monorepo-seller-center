@@ -6,7 +6,7 @@
     "start:api": "nx run app-api:serve",
     "start:frontend": "nx run app-frontend:serve",
     "build": "nx build",
-    "typeorm-cli": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "test": "nx test"
   },
   "private": true,
@@ -16,6 +16,7 @@
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
     "express": "4.17.1",
+    "fs": "^0.0.1-security",
     "joi": "^17.4.2",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",

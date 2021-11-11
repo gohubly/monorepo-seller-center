@@ -4,16 +4,15 @@ import * as cors from 'cors'
 import { API_PORT } from '@gohubly/shared'
 
 import routes from './api/routes';
-import errorHandler from './api/middleware/errorHandler.midd';
+import routerHandler from './api/middleware/routerHandler.midd';
 
 import './app/database/connect'
 
 const app = express();
 app.use(cors())
   .use(express.json())
-  .use(errorHandler)
-
-app.use('/api', routes)
+  .use(routerHandler)
+  .use('/api', routes)
 
 app.get('/', (req, res) => {
   res.send({ message: 'Welcome to app-api!' });

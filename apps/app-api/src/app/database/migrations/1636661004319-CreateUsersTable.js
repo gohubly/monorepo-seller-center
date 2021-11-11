@@ -1,7 +1,7 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+const { Table, MigrationInterface } = require('typeorm')
 
-export class CreateUsersTable1636576013980 implements MigrationInterface {
-    public async up(queryRunner: QueryRunner): Promise<void> {
+export class CreateUsersTable1636661004319 extends MigrationInterface {
+    async up(queryRunner) {
         await queryRunner.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"')
         
         const table = new Table({
@@ -96,7 +96,7 @@ export class CreateUsersTable1636576013980 implements MigrationInterface {
         await queryRunner.createTable(table)
     }
 
-    public async down(queryRunner: QueryRunner): Promise<void> {
+    async down(queryRunner) {
         await queryRunner.dropTable('users')
         await queryRunner.query('DROP EXTENSION "uuid-ossp"')
     }

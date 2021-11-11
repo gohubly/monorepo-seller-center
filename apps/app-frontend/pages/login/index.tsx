@@ -1,8 +1,6 @@
 import { Component } from "react";
 import LoginTemplate from "../../templates/Login";
 
-import { Input, Checkbox } from '@gohubly/design-system'
-
 class LoginPage extends Component {
   componentDidCatch(error) {
     console.error('LoginPage Catch', error)
@@ -13,9 +11,7 @@ class LoginPage extends Component {
   render() {
     return (
       <div>
-        <Input placeholder="Aooooba" label="nome doido" />
-        <Checkbox>Lucas</Checkbox>
-        {/* <LoginTemplate /> */}
+        <LoginTemplate />
       </div>
     );
   }

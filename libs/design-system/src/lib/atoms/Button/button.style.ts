@@ -86,7 +86,7 @@ const Button = styled.button<iButton>`
   font-size: ${({ size }) => FONT_SIZE_BY_SIZE[size]};
   color: ${({ variant, theme }) => theme.colors[FONT_COLOR_BY_VARIANT[variant]]};
   
-  background: ${({ theme, variant}) => theme.colors[DEFAULT_BACKGROUND_BY_VARIANT[variant]]};
+  background: ${({ color, theme, variant}) => color ? theme.colors[color] : theme.colors[DEFAULT_BACKGROUND_BY_VARIANT[variant]]};
 
   cursor: pointer;
   transition: all 0.15s linear;

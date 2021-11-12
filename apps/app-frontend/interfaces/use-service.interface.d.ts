@@ -1,15 +1,15 @@
-interface iUseServiceParams {
-  auto?: boolean
-  url?: string,
-  method?: 'POST' | 'PATCH' | 'GET' | 'DELETE'
-  headers?: AxiosRequestConfig.headers
+interface iUseService<iUniqueServiceData = iAny, iUniqueServiceBodyDto = iAny> {
+  response?: iUseServiceResponse<iUniqueServiceData>
+  error?: iUseServiceError
+  makeRequest: (params: iUniqueServiceBodyDto) => void
+  loading: boolean
 }
 
-interface iUseService<iUniqueServiceData, iUniqueServiceParam> {
-  response?: iUseServiceResponse<iUniqueServiceData>
-  error?: string
-  makeRequest: (params: iUniqueServiceParam) => void
-  loading: boolean
+type iUseServiceOmits = Omit<iUseService, 'makeRequest'>
+
+interface iUseServiceError {
+  error: string
+  status: number | string
 }
 
 interface iUseServiceResponse<iUniqueServiceData> {

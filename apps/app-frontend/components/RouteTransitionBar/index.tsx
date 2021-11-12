@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import TopBarProgress from 'react-topbar-progress-indicator';
 import useRouteTransitionBarLogic from './hook'
 
-const RouteTransitionBar: React.FC = ({ children }) => {
-  const { transition } = useRouteTransitionBarLogic({ children });
+const RouteTransitionBar: React.FC = () => {
+  const { transition } = useRouteTransitionBarLogic();
   
   useEffect(() => {
     TopBarProgress.config({

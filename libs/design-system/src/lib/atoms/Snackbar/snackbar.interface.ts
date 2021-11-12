@@ -5,6 +5,7 @@ export type iSnackbarVariants = 'DEFAULT' | 'INFORMATION' | 'SUCCESS' | 'WARNING
 
 export interface iSnackBar {
   variant?: iSnackbarVariants
+  margin?: string
   label: string | ReactNode | JSX.Element | ReactChild
   close?: boolean
   button?: {

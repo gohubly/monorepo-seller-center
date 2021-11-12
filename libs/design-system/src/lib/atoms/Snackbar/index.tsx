@@ -11,6 +11,7 @@ export const SnackBar: React.FC<iSnackBar> = ({
   button,
   label,
   close,
+  margin,
 }) => {
   const ICON_ID_BY_VARIANT: iIconTypes = useMemo(() => {
     switch(variant) {
@@ -43,7 +44,7 @@ export const SnackBar: React.FC<iSnackBar> = ({
   }, [variant])
 
   return (
-    <styled.Wrapper variant={variant}>
+    <styled.Wrapper variant={variant} margin={margin}>
       <styled.Flex>
         <Icon id={ICON_ID_BY_VARIANT} />
 

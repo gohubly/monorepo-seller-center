@@ -12,9 +12,17 @@ export const Button: React.FC<iButton> = ({
   iconRight,
   disabled,
   variant = 'primary',
+  type,
 }) => {
+  const props = {
+    type,
+    disabled,
+    size,
+    variant,
+    onClick
+  }
   return (
-    <styled.Button onClick={onClick} disabled={disabled} variant={variant} size={size}>
+    <styled.Button {...props}>
       {iconLeft && (
         <styled.IconWrapper>
           <Icon id={iconLeft} />

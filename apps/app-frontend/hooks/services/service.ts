@@ -2,7 +2,7 @@ import axios from 'axios'
 import { ROUTES } from '@gohubly/shared'
 
 const API = axios.create({
-  baseURL: 'http://localhost:4433/api',
+  baseURL: 'http://localhost:3333/api',
   headers: {
     'Content-Type': 'application/json; charset=utf-8',
   },
@@ -33,7 +33,8 @@ API.interceptors.request.use(
 
 API.interceptors.response.use(
   async response => {
-    return { ...response }
+    console.log('respose full', response)
+    return response
   },
   async error => {
     try {

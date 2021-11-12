@@ -1,7 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-const useRouteTransitionBarLogic = ({ children }: iUseRouteTransitionBarLogicParams, refs?: React.RefObject<unknown>[]): iUseRouteTransitionBarLogic => {
+const useRouteTransitionBarLogic = (): iUseRouteTransitionBarLogic => {
   const Router = useRouter()
   const [transition, setTransition] = useState(false);
 

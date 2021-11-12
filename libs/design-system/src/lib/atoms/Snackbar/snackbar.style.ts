@@ -29,13 +29,14 @@ const Flex = styled.div`
   }
 `
 
-const Wrapper = styled.div<{ variant: string }>`
+const Wrapper = styled.div<{ variant: string, margin?: string }>`
   display: flex;
   flex-direction: column;
   gap: 16px;
-
+  
   border-radius: 4px;
   padding: 18px 20px;
+  margin: ${({ margin }) => margin}px;
 
   background: ${({ theme, variant }) => theme.colors[BACKGROUND_COLOR_BY_VARIANT[variant]]};
 

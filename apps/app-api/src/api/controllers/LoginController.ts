@@ -6,20 +6,28 @@ import { CommonHandler } from "../dtos/controllers.dto"
 const login = async (req: Request, res: Response, next: NextFunction) => {
   try {
     console.log('controller: Init attempt to login')
-    await LoginLogic.authenticateUser(req.body, next)
+    const jwt = await LoginLogic.authenticateUser(req.body, next)
 
     const response = new CommonHandler({
-      status: HttpStatusCode.OK,
+      status: 200,
+      data: {
+        jwt,
+      }
+    })
+    
+    const error = new CommonHandler({
+      status: HttpStatusCode.UNAUTHORIZED,
+      error: 'user not found',
     })
 
-    res.status(HttpStatusCode.OK).json(response)
+    res.status(error.status).json(error)
   } catch (dataError) {
     const response = new CommonHandler({
       status: dataError?.status ?? HttpStatusCode.UNAUTHORIZED,
       error: dataError,
     })
     
-    next(response)
+    res.status(response.status).json(response)
   }
 }
 

@@ -2,19 +2,23 @@ import styled from './input.style'
 
 import { iInputComponent } from './input.interface'
 import Typography from '../Typography'
+import { Flex } from '..'
 
 export const Input: React.FC<iInputComponent> = ({
   prefix,
   suffix,
   iconLeft,
   iconRight,
-  size = 'medium',
+  Size = 'medium',
   error,
   disabled,
   onChange,
   value,
   placeholder,
   label,
+  name,
+  onBlur,
+  type,
 }) => {
   const props = {
     prefix,
@@ -23,15 +27,18 @@ export const Input: React.FC<iInputComponent> = ({
     iconRight,
     placeholder,
     value,
-    onChange,
     error,
     disabled,
+    name,
+    onChange,
+    onBlur,
+    type,
   }
 
   return (
-    <styled.Flex>
+    <Flex fullWidth flexDirection="column" gap={8}>
       {label && <Typography size="small" textTransform="uppercase" color="grayscale900" weight='500'>{label}</Typography>}
-      <styled.Input size={size as never} {...props} />
-    </styled.Flex>
+      <styled.Input Size={Size} {...props} />
+    </Flex>
   )
 }

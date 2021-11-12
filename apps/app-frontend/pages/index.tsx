@@ -10,9 +10,7 @@ class IndexPage extends Component {
 
   render() {
     return (
-      <div>
-        <HomeTemplate />
-      </div>
+      <HomeTemplate />
     );
   }
 }

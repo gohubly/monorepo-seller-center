@@ -10,9 +10,7 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div>
-        <LoginTemplate />
-      </div>
+      <LoginTemplate />
     );
   }
 }

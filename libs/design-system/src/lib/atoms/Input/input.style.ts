@@ -12,9 +12,9 @@ const PADDING_BASED_ON_SIZE: Record<iInputSizes, string> = {
 
 const Input = styled.input<iInput>`
   outline: none;
-  padding: ${({ size }) => PADDING_BASED_ON_SIZE[size]};
+  padding: ${({ Size }) => PADDING_BASED_ON_SIZE[Size]};
 
-  font-size: ${({ size }) => FONT_SIZE_BASED_ON_SIZE[size]};
+  font-size: ${({ Size }) => FONT_SIZE_BASED_ON_SIZE[Size]};
   color: ${({ theme }) => theme.colors.grayscale900};
 
   border: 1px solid ${({ theme }) => theme.colors.grayscale400};
@@ -51,15 +51,6 @@ const Input = styled.input<iInput>`
   }
 `
 
-const Flex = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  width: 100%;
-`
-
 export default {
   Input,
-  Flex,
 }

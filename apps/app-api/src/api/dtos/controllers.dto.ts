@@ -8,7 +8,7 @@ interface iCommonHandler {
 }
 
 export class CommonHandler {
-  status = 0
+  status? = 0
   message? = ''
   error? = ''
   data? = {} || ''

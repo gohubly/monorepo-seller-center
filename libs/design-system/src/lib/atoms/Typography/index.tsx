@@ -11,6 +11,7 @@ export const Typography: React.FC<iTypography> = ({
   textAlign = 'left',
   weight = '500',
   textTransform,
+  onClick,
 }) => {
   const props = {
     size,
@@ -19,7 +20,10 @@ export const Typography: React.FC<iTypography> = ({
     weight,
     textTransform,
     as,
+    pointer: !!onClick,
+    onClick,
   }
+  
   switch (as) {
     case 'span':
       return <styled.Span {...props}>{children}</styled.Span>;

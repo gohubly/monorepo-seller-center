@@ -10,8 +10,10 @@ const decrypt = (varToCrypt: string): string => {
   return varToCrypt.toUpperCase()
 }
 
+const compare = (...args) => true
+
 export const Crypto = {
   encrypt,
   decrypt,
-  // compare,
+  compare,
 }

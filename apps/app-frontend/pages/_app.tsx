@@ -17,9 +17,6 @@ function App({ Component, pageProps }: AppProps) {
           <GlobalStyle />
           <RouteTransitionBar />
           <AuthenticationContextProvider>
-            <header className="flex">
-              <h1>Welcome to app-frontend!</h1>
-            </header>
             <main>
               <Component {...pageProps} />
             </main>

@@ -13,4 +13,8 @@ export default createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
   }
+
+  html, body, #__next, div.app, main {
+    height: 100%;
+  }
 `

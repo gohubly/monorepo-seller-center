@@ -3,7 +3,7 @@ import { iIconTypes } from "../Icon/icon.interface";
 export type iInputSizes = 'medium' | 'large'
 
 export interface iInput {
-  size?: iInputSizes;
+  Size?: iInputSizes;
   label?: string;
   prefix?: string;
   suffix?: string | JSX.Element;

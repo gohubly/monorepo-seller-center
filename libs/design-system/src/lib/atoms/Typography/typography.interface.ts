@@ -16,4 +16,5 @@ export interface iTypography {
   textAlign?: iTypographyTextAlignment;
   weight?: iTypographyWeight;
   textTransform?: iTypographyTextTransform;
+  onClick?: () => void
 }

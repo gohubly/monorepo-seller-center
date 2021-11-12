@@ -8,6 +8,7 @@ interface iTypographyComponent {
   textAlign: string
   color: string
   weight: string
+  pointer?: boolean
 }
 
 const SPAN_FONT_SIZE_BASED_ON_SIZE: Record<iTypographySizes, string> = {
@@ -29,6 +30,8 @@ const TypographyCss = css<iTypographyComponent>`
   color: ${({ color, theme }) => color ? theme.colors[color] : ''};
   text-align: ${({ textAlign }) => textAlign};
   text-transform: ${({ textTransform }) => textTransform};
+  
+  cursor: ${({ pointer }) => pointer ? 'pointer' : 'inherit'};
 `
 
 const Span = styled.span<iTypographyComponent>`
@@ -58,6 +61,8 @@ const HeadLine = css<iTypographyComponent>`
 
   color: ${({ color, theme }) => theme.colors[color]};
   text-align: ${({ textAlign }) => textAlign};
+
+  cursor: ${({ pointer }) => pointer ? 'pointer' : 'inherit'};
 `
 
 const h1 = styled.h1`${HeadLine}`

@@ -11,6 +11,8 @@ import Bell from './icons/bell.svg'
 import Close from './icons/close.svg'
 import Denied from './icons/denied.svg'
 import Info from './icons/info.svg'
+import eyeOff from './icons/eye-off.svg'
+import eyeOn from './icons/eye-on.svg'
 
 const ICONS_BY_ID: Record<iIconTypes, string> = {
   user: User,
@@ -22,6 +24,8 @@ const ICONS_BY_ID: Record<iIconTypes, string> = {
   close: Close,
   denied: Denied,
   info: Info,
+  eyeOff,
+  eyeOn
 }
 
 export const Icon: React.FC<iIcon> = (props) => {

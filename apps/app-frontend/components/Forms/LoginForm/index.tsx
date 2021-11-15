@@ -4,7 +4,7 @@ import useLoginFormLogic from "./LoginForm.logic"
 
 const LoginForm: React.FC<iLoginForm> = () => {
   const logic = useLoginFormLogic()
-  
+
   return (
     <Formik
       onSubmit={logic.handleSubmitForm}
@@ -40,16 +40,18 @@ const LoginForm: React.FC<iLoginForm> = () => {
                 placeholder="example@email.com"
                 Size="large"
               />
-              
+
               <Input
                 value={values.password}
                 onChange={handleChange}
-                type="password"
+                type={logic.showPassword ? "text" : "password"}
                 name="password"
                 onBlur={handleBlur}
                 label="password"
                 placeholder="Type your password"
                 Size="large"
+                iconRight={logic.showPassword ? "eyeOff" : "eyeOn"}
+                iconRightOnClick={logic.handleToggleShowPassword}
               />
 
               <Flex alignItems="center" justifyContent="space-between">
@@ -64,7 +66,7 @@ const LoginForm: React.FC<iLoginForm> = () => {
               </Flex>
 
             </Flex>
-            
+
             <Button size="large" type="submit">
               Sign in
             </Button>

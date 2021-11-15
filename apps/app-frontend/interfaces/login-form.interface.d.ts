@@ -5,5 +5,7 @@ interface iLoginForm extends iComponent {
 
 interface iUseLoginFormLogic {
   handleSubmitForm: (value: Record<string, iAny>) => void
+  handleToggleShowPassword: () => void
+  showPassword: boolean
   service: iUseServiceOmits
 }

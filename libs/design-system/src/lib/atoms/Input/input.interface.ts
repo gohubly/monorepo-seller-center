@@ -8,7 +8,9 @@ export interface iInput {
   prefix?: string;
   suffix?: string | JSX.Element;
   iconLeft?: iIconTypes;
+  iconLeftOnClick?: () => void
   iconRight?: iIconTypes;
+  iconRightOnClick?: () => void
   error?: string
   disabled?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;

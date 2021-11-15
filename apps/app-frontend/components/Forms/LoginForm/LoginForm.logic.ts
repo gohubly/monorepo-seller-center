@@ -1,8 +1,10 @@
 import { useService } from '../../../hooks'
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { iLoginParams, iLoginResponse } from './LoginForm.interface'
 
 const useLoginFormLogic = (params?: iLoginParams, refs?: React.RefObject<unknown>[]): iUseLoginFormLogic => {
+  const [showPassword, setShowPassword] = useState(false)
+
   const onSuccessRequest = useCallback(() => {
     alert('daora')
   }, [])
@@ -20,8 +22,14 @@ const useLoginFormLogic = (params?: iLoginParams, refs?: React.RefObject<unknown
     })
   }, [makeRequest])
 
+  const handleToggleShowPassword = useCallback(() => {
+    setShowPassword(!showPassword)
+  }, [showPassword])
+
   return {
     handleSubmitForm,
+    handleToggleShowPassword,
+    showPassword,
     service,
   }
 }

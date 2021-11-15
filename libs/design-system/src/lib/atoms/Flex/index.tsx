@@ -10,6 +10,7 @@ export interface iFlex {
   gap?: number
   fullHeight?: boolean
   fullWidth?: boolean
+  position?: 'absolute' | 'relative'
 }
 
 export const Flex = styled.div<iFlex>`
@@ -17,6 +18,9 @@ export const Flex = styled.div<iFlex>`
 
   height: ${({ fullHeight }) => fullHeight ? '100%' : 'auto'};
   width: ${({ fullWidth }) => fullWidth ? '100%' : 'auto'};
+
+  position: ${({ position }) => position};
+
 
   flex: ${({ flex }) => flex};
   -webkit-flex: ${({ flex }) => flex};

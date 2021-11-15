@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { iInput, iInputSizes } from './input.interface'
 
 const FONT_SIZE_BASED_ON_SIZE: Record<iInputSizes, string> = {
@@ -13,6 +13,8 @@ const PADDING_BASED_ON_SIZE: Record<iInputSizes, string> = {
 const Input = styled.input<iInput>`
   outline: none;
   padding: ${({ Size }) => PADDING_BASED_ON_SIZE[Size]};
+  padding-left: ${({ iconLeft }) => iconLeft ? '56px' : 'auto'};
+  padding-right: ${({ iconRight }) => iconRight ? '56px' : 'auto'};
 
   font-size: ${({ Size }) => FONT_SIZE_BASED_ON_SIZE[Size]};
   color: ${({ theme }) => theme.colors.grayscale900};
@@ -51,6 +53,36 @@ const Input = styled.input<iInput>`
   }
 `
 
+const RelativeWrapper = styled.div`
+  position: relative;
+
+  display: flex;
+  width: 100%;
+`
+
+const IconWrapper = css<{ onClick?: () => void }>`
+  position: absolute;
+  top: calc(50% + 12px);
+  transform: translateY(-50%);
+
+  cursor: ${({ onClick }) => onClick ? 'pointer' : 'auto'};
+`
+
+const LeftIconWrapper = styled.div`
+  ${IconWrapper}
+  left: 14px;
+`
+
+
+const RightIconWrapper = styled.div`
+  ${IconWrapper}
+  right: 14px;
+`
+
+
 export default {
+  RelativeWrapper,
+  RightIconWrapper,
+  LeftIconWrapper,
   Input,
 }

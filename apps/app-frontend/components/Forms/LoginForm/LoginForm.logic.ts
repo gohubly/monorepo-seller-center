@@ -16,6 +16,10 @@ const useLoginFormLogic = (params?: iLoginParams, refs?: React.RefObject<unknown
   })
 
   const handleSubmitForm = useCallback((values) => {
+    if (values.keepLoggedIn) {
+      // TODO: Set in cookies for 2 full weeks
+      // TODO: Else set in cookies for 1 full day
+    }
     makeRequest({
       email: values.email,
       password: values.password,

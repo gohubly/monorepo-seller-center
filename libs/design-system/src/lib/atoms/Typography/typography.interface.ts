@@ -9,7 +9,7 @@ export type iTypographyColors = keyof typeof theme.colors
 export type iTypographyTextTransform = 'uppercase' | 'lowercase'
 
 export interface iTypography {
-  children: string
+  children: string | number
   as?: iTypographyAs;
   color?: iTypographyColors;
   size?: iTypographySizes;

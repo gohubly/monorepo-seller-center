@@ -1,4 +1,3 @@
-import { Stepper } from "@gohubly/design-system"
 import { ROUTES } from "@gohubly/shared"
 import { useRouter } from "next/dist/client/router"
 import TemplateLayout from "../../components/TemplateLayout"

@@ -10,23 +10,6 @@ const HomeTemplate: React.FC = () => {
   return (
     <TemplateLayout type='PUBLIC'>
       <h1>Home templatee!</h1>
-      <Stepper
-        currentStep={2}
-        steps={[
-          {
-            label: 'org details',
-            icon: 'bell',
-          },
-          {
-            label: 'odrg details',
-            icon: 'alert',
-          },
-          {
-            label: 'odrg details',
-            icon: 'close',
-          }
-        ]}
-      />
       {/* <Button onClick={push}>Login</Button> */}
     </TemplateLayout>
   )

@@ -8,11 +8,10 @@ const AuthenticationContextInitialValues = {
 }
 
 export const AuthenticationContext = React.createContext<iAuthenticationContext>(AuthenticationContextInitialValues);
- 
 
 export const AuthenticationContextProvider: React.FC = ({ children }) => {
   const [authentication, setAuthentication] = useState<iAuthentication | null>(null);
-  
+
   const clearAuthentication = () => {
     // localStorage.clearStorage()
     setAuthentication(AuthenticationContextInitialValues.authentication)
